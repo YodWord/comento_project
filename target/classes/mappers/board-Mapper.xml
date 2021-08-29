@@ -11,10 +11,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values(#{title}, #{content}, #{writer})
 	</insert>
 	
-	<select id="read" resultType="com.sample.domain.BoardVO">
+	<select id="read" resultType="com.myp.domain.BoardVO">
 		select
-			bno, title, content, writerm regdate, viewcnt
-		form
+			bno, title, content, writer, regdate, viewcnt
+		from
 			tbl_board
 		where
 			bno= #{bno}
@@ -26,17 +26,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</update>
 	
 	<delete id="delete">
-		delete form tbl_board where bno= #{bno}
+		delete from tbl_board where bno = #{bno}
 	</delete>
 	
-	<select id="listAll" resultType="com.sample.domain.BoardVO">
+	<select id="listAll" resultType="com.myp.domain.BoardVO">
 		<![CDATA[
 			select
 				bno, title, content, writer, regdate, viewcnt
-			form
+			from
 				tbl_board
 			where
-				bno>0
+				bno > 0
 			order by bno desc, regdate desc
 		]]>
 	</select>
