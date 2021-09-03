@@ -1,12 +1,13 @@
-package com.myp.domain;
+package com.myp.persistence;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
-import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
+
+import com.myp.domain.BoardVO;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
