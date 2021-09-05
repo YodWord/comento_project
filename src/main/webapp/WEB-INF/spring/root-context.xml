@@ -15,13 +15,14 @@
 	
 	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/comentopro?useSSL=false"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/comentopro?useSSL=false&amp;allowPublicKeyRetrieval=true"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="asd1234"></property>
 	</bean>
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds"></property>
+		<property name="mapperLocations" value="classpath:mappers/*.xml" />
 	</bean>
 
 

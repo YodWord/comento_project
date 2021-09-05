@@ -32,6 +32,11 @@ public class BoardController {
 		
 		
 	}
+	
+	@RequestMapping(value = "/regist", method = RequestMethod.GET) // GET 방식으로 페이지 호출
+	  public void regist() throws Exception{
+	  }
+	
 	@RequestMapping(value = "/regist", method = RequestMethod.POST) // POST방식으로 내용 전송
 	  public String registPOST(BoardVO board, RedirectAttributes rttr) throws Exception { // 인자값으로 REDIRECT 사용 	   
 		  service.regist(board); // 글작성 서비스 호출	    	    
